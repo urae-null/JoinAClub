@@ -1,0 +1,61 @@
+.clubPoster {
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.clubName {
+    text-align: center;
+    margin-top: 28px; 
+    font-size: 73px;
+}
+
+.clubType {
+    text-align: right;
+    margin-top: 13px;
+    margin-right: 12px;
+    font-size: 21px;
+}
+
+.clubSubject {
+    text-align: right;
+    margin-top: 1px;
+    font-size: 34px;
+    margin-right: 12px;
+}
+
+.clubIntroTitle {
+    text-align: left;
+    margin-top: 35px;
+    font-size: 25px;
+    margin-left: 12px;
+}
+
+.clubIntro {
+    margin: 17px;
+    height: 200px;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.clubInterview {
+    float: left;
+    text-align: center;
+    margin: 7px;
+    font-size: 26px;
+}
+
+.clubMyself {
+    float: left;
+    text-align: center;
+    margin: 7px;
+    font-size: 26px;
+}
+
+.clubInterviewDate {
+    display: flex;
+    justify-content: center;
+}

@@ -6,6 +6,8 @@
 }
 
 * {
+    --main-color: rgb(100, 98, 240);
+    --semi-color: white;
     font-family: 'GongGothicMedium';
 }
 
@@ -37,7 +39,7 @@ body {
 
 .first,
 .second {
-    height: 90vh
+    height: auto;
 }
 
 .header {
@@ -110,9 +112,16 @@ a:hover {
     outline: 1px solid black;
 }
 
+.clubExplainContainer {
+    width:clamp(0px,90vw,1080px);
+    height:calc(100% - 110px);
+    overflow-y: hidden;
+    overflow-x: auto;
+    outline: 1px solid black;
+}
+
 .clubExplain {
-    width:110vmin;
-    height:calc(100% - 20px);
-    margin: 10px 0;
-    background-color: black;
+    width:1080px;
+    height:100%;
+    display: flex;
 }

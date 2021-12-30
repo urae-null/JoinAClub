@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formStyle.css">
     <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/clubContainer.css">
     <script src="js/db.js"></script>
     <script>window.onload = loadClubList()</script>
     <script src="js/scroll.js"></script>
@@ -39,20 +41,81 @@
         <div class="space" style="height:12vmin;"></div>
     </div>
     <div class="choiceClub">
-        <div class="title">동아리 신청</div>
-        <div class="title">동아리 확인</div>
+        <div class="clubForm" id="applicationClub">
+            <div class="title">동아리 신청</div><br>
+            <form action="{%url 'login' %}" method="POST" class="gridForm" id="application">
+                <div class="form_style item">
+                    <input name='schoolNumber' type='text' value='' autocomplete="off" required>
+                    <label for="schoolNumber">학번</label>
+                </div>
+                <div class="form_style item">
+                    <input name='name' type="text" value='' autocomplete="off" required>
+                    <label for="name">이름</label>
+                </div>
+                <input class='submit item' type="button" value="신청" onclick="sign()">
+                <select name="firstClub1" class="item" id="firstClub1"></select>
+                <select name="firstClub2" class="item" id="firstClub2"></select>
+                <select name="secondClub1" class="item" id="secondClub1"></select>
+                <select name="secondClub2" class="item" id="secondClub2"></select>
+            </form>
+        </div>
+        <div class="clubForm" id="resultClub">
+            <div class="title">면접 결과 확인</div><br>
+            <form action="{%url 'login' %}" method="POST" class="gridForm" id="result">
+                <div class="form_style item">
+                    <input name='schoolNumber' type='text' value='' autocomplete="off" required>
+                    <label for="schoolNumber">학번</label>
+                </div>
+                <div class="item" id="name"></div>
+                <input class='submit item' type="button" value="확인" onclick="getResult()">
+                <div name="firstClub1" class="item" id="firstClub1"></div>
+                <div name="firstClub2" class="item" id="firstClub2"></div>
+                <div name="secondClub1" class="item" id="secondClub1"></div>
+                <div name="secondClub2" class="item" id="secondClub2"></div>
+            </form>
+        </div>
     </div>
     <div class="first">
         <div class="title">제 1 동아리</div>
-        <div class="clubContainer" id="firstList">
+        <div class="clubContainer" id="firstList"></div><br>
+        <div class="clubExplainContainer">
+            <div class="clubExplain">
+                <div class="clubPoster">
+                    <img style="width: 80%; margin: auto;">
+                </div>
+                <div style="height: 100%; width: 50%;">
+                    <div style="height: 195px;">
+                        <img style="width: 62px; height: 62px; text-align: left;">
+                        <p class="clubName">NULL (널)</p>
+                    </div>
+                    <div class="clubType">제1동아리</div>
+                    <div class="clubSubject">정보</div>
+                    <div class="clubIntroTitle">소개</div>
+                    <div class="clubIntro">
+                        Yeah Yeah Yeah Yeah Come and be my love Come and be my love baby Yeah Yeah Yeah 
+                        Yeah Come and be my love Come and be my love baby 멍하니 서서 막 고민고민 해 나 
+                        이거 진짜 잘하는 짓인지 Yeah Yeah Yeah Yeah 뭐 어때 No No No No 미쳤어 난 쯔위라고 
+                        해 무작정 인사할까 내 전화번호야 쪽지를 주고 도망칠까 Yeah Yeah Yeah Yeah 어떡해 
+                        No No No No 지금이야 Girl you can do it 눈이 마주치고 있잖아 Love is timing 놓치면 
+                        후회할지 몰라 Love is coming, coming 좀만 더 용기를 내 더는 망설이지 마 이상하게 생각해도 
+                        어쩔 수 없어 반했으니까
+                    </div>
+                    <footer style="margin-top: auto; margin-bottom: 17px;">
+                        <div style="text-align: center; margin: 28px; display: flex; align-items: center; justify-content: center;">
+                            <div class="clubInterview">면접<br>O</div>
+                            <div class="clubMyself">자소서<br>X</div>
+                        </div>
+                        <div class="clubInterviewDate">면접 일시 - 추후 공지</div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
         </div>
-        <div class="clubExplain"></div>
     </div>
     <div class="second">
         <div class="title">제 2 동아리</div>
-        <div class="clubContainer" id="secondList">
-        </div>
-        <div class="clubExplain"></div>
+        <div class="clubContainer" id="secondList"></div><br>
+        <div class="clubExplainContainer"><div class="clubExplain"></div></div>
     </div>
     <div class="spaceBottom"></div>
 </body>

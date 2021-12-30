@@ -9,5 +9,5 @@ function scrollToComponent(count) {
     }
     let componentHeight = document.querySelector(component).offsetHeight;
     let componentTop = document.querySelector(component).offsetTop;
-    window.scrollTo({top:componentTop - componentHeight/5, behavior:'smooth'});
+    window.scrollTo({top:componentTop - componentHeight/20, behavior:'smooth'});
 }
