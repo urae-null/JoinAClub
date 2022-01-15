@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/formStyle.css">
     <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/clubContainer.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <script src="js/db.js"></script>
+    <script src="js/student.js"></script>
     <script>window.onload = loadClubList()</script>
     <script src="js/scroll.js"></script>
     <link rel="shortcut icon" href="img/favicon.ico">
@@ -42,70 +46,76 @@
     </div>
     <div class="choiceClub">
         <div class="clubForm" id="applicationClub">
+            <br>
             <div class="title">동아리 신청</div><br>
-            <form action="{%url 'login' %}" method="POST" class="gridForm" id="application">
+            <form action="" method="POST" class="gridForm" id="application">
                 <div class="form_style item">
-                    <input name='schoolNumber' type='text' value='' autocomplete="off" required>
-                    <label for="schoolNumber">학번</label>
+                    <input name='schoolNum' id="schoolNum" type='text' value='' autocomplete="off" required>
+                    <label for="schoolNum">학번(5자리)</label>
                 </div>
                 <div class="form_style item">
-                    <input name='name' type="text" value='' autocomplete="off" required>
+                    <input name='name' id="name" type="text" value='' autocomplete="off" required>
                     <label for="name">이름</label>
                 </div>
                 <input class='submit item' type="button" value="신청" onclick="sign()">
-                <select name="firstClub1" class="item" id="firstClub1"></select>
-                <select name="firstClub2" class="item" id="firstClub2"></select>
-                <select name="secondClub1" class="item" id="secondClub1"></select>
-                <select name="secondClub2" class="item" id="secondClub2"></select>
+                <select name="firstClub1" class="item" id="firstClub1"><option value=''>로딩중...</option></select>
+                <select name="firstClub2" class="item" id="firstClub2"><option value=''>로딩중...</option></select>
+                <select name="secondClub1" class="item" id="secondClub1"><option value=''>로딩중...</option></select>
+                <select name="secondClub2" class="item" id="secondClub2"><option value=''>로딩중...</option></select>
             </form>
         </div>
+        <br>
         <div class="clubForm" id="resultClub">
             <div class="title">면접 결과 확인</div><br>
-                <div class="form_style item">
-                    <input name='schoolNumber' type='text' value='' autocomplete="off" required>
-                    <label for="schoolNumber">학번</label>
+            <div class="top">
+                <div class="form_style">
+                    <input name='schoolNumber' id="schoolNumber" type='text' value='' autocomplete="off" required>
+                    <label for="schoolNumber">학번(5자리)</label>
                 </div>
-                <input class='submit item' type="button" value="확인" onclick="getResult()" style="cursor: pointer;">
+                <input class='submit' type="button" value="확인" onclick="getResult()" style="cursor: pointer;">
+                <br>
                 <table>
                     <thead>
                         <tr>
                             <th></th>
                             <th>1지망</th>
-                            <th>자소서링크</th>
+                            <th>자소서</th>
                             <th>합격여부</th>
                             <th>2지망</th>
-                            <th>자소서링크</th>
+                            <th>자소서</th>
                             <th>합격여부</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th>제1동아리</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th id="resultFirstClub1">-</th>
+                            <th id="myselfFirstClub1">-</th>
+                            <th id="passOrNotFirstClub1">-</th>
+                            <th id="resultFirstClub2">-</th>
+                            <th id="myselfFirstClub2">-</th>
+                            <th id="passOrNotFirstClub2">-</th>
                         </tr>
                         <tr>
                             <th>제2동아리</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th id="resultSecondClub1">-</th>
+                            <th id="myselfSecondClub1">-</th>
+                            <th id="passOrNotSecondClub1">-</th>
+                            <th id="resultSecondClub2">-</th>
+                            <th id="myselfSecondClub2">-</th>
+                            <th id="passOrNotSecondClub2">-</th>
                         </tr>
                     </tbody>
                 </table>
-                
-                <div name="firstClub1" class="item" id="firstClub1"></div>
-                <div name="firstClub2" class="item" id="firstClub2"></div>
-                <div name="secondClub1" class="item" id="secondClub1"></div>
-                <div name="secondClub2" class="item" id="secondClub2"></div>
+            </div>
+            <br>
+            <div name="firstClub1" class="item" id="firstClub1"></div>
+            <div name="firstClub2" class="item" id="firstClub2"></div>
+            <div name="secondClub1" class="item" id="secondClub1"></div>
+            <div name="secondClub2" class="item" id="secondClub2"></div>
         </div>
     </div>
+    <div class="space" style="height:6vmin;background-color: var(--semi-color);"></div>
     <div class="first">
         <div class="title">제 1 동아리</div>
         <div class="clubContainer" id="firstList"></div><br>

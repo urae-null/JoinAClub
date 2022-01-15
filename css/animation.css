@@ -37,7 +37,7 @@
     top: 0;
 }
 .animated-title > div.text-top div {
-    animation: showTopText 1s;
+    animation: showTopText 0.8s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
     bottom: 0;
@@ -62,7 +62,7 @@
 }
 
 .choice > a {
-    animation: showBottomText 0.7s;
+    animation: showBottomText 0.5s;
     animation-fill-mode: forwards;
     transform: translate(0, -100%);
 }
