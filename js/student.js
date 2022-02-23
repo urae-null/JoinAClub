@@ -79,22 +79,22 @@ function getResult(){
             var passOrNotSecondClub2 = document.getElementById("passOrNotSecondClub2");
             if (student.firstClub1 != "none"){
                 resultFirstClub1.innerHTML = data[student.firstClub1].name;
-                myselfFirstClub1.innerHTML = `<a href='${data[student.firstClub1].myself}'>클릭</a>`;
+                myselfFirstClub1.innerHTML = `<a href='${data[student.firstClub1].link}' target='_blank'>클릭</a>`;
                 passOrNotFirstClub1.innerHTML = student.passOrNotFirstClub1;
             }
             if (student.firstClub2 != "none") {
                 resultFirstClub2.innerHTML = data[student.firstClub2].name;
-                myselfFirstClub2.innerHTML = `<a href='${data[student.firstClub2].myself}'>클릭</a>`;
+                myselfFirstClub2.innerHTML = `<a href='${data[student.firstClub2].link}' target='_blank'>클릭</a>`;
                 passOrNotFirstClub2.innerHTML = student.passOrNotFirstClub2;
             }
             if (student.secondClub1 != "none") {
                 resultSecondClub1.innerHTML = data[student.secondClub1].name;
-                myselfSecondClub1.innerHTML = `<a href='${data[student.secondClub1].myself}'>클릭</a>`;
+                myselfSecondClub1.innerHTML = `<a href='${data[student.secondClub1].link}' target='_blank'>클릭</a>`;
                 passOrNotSecondClub1.innerHTML = student.passOrNotSecondClub1;
             }
             if (student.secondClub2 != "none") {
                 resultSecondClub2.innerHTML = data[student.secondClub2].name;
-                myselfSecondClub2.innerHTML = `<a href='${data[student.secondClub2].myself}'>클릭</a>`;
+                myselfSecondClub2.innerHTML = `<a href='${data[student.secondClub2].link}' target='_blank'>클릭</a>`;
                 passOrNotSecondClub2.innerHTML = student.passOrNotSecondClub2;
             }
         }).catch(() => {

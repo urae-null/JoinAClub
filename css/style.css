@@ -136,6 +136,7 @@ th, td {
     gap: 10px 20px;
     margin:10px 0 0 0;
     width:90vmin;
+    
 }
 
 .clubContainer > div {
@@ -146,10 +147,13 @@ th, td {
     height: 35px;
     transition: 0.2s;
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     cursor: pointer;
+    text-align: center;
+    line-height: 35px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
 }
 
 .clubContainer > div:hover {
@@ -166,7 +170,7 @@ th, td {
 }
 
 .clubExplain {
-    width:1080px;
+    width:1068px;
     height:100%;
     transform: translateY(0);
     transition: 1s;

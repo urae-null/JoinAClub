@@ -35,7 +35,6 @@ function loadClubList(){
                 }
             }
             firstClub2.innerHTML += `<option value=none>없음</option>`
-            secondClub1.innerHTML += `<option value=none>없음</option>`
             secondClub2.innerHTML += `<option value=none>없음</option>`
         }).catch(() => {
             console.log('error')
@@ -46,11 +45,11 @@ function clubContainer(data) {
     var container = `
     <div id="${data.name}" style="display:flex;">
     <div class="clubPoster">
-        <img style="height:720px; margin: auto;" src="${data.poster}.png" referrerpolicy="no-referrer">
+        <img style="height:720px; margin: auto;" src="${data.poster}.png" onerror="this.style.display='none'" alt="" referrerpolicy="no-referrer">
     </div>
     <div style="height: 720px; width: 50%;">
         <div style="height: 195px;">
-            <img style="width: 62px; height: 62px; text-align: left;" src="${data.logo}.png" referrerpolicy="no-referrer">
+            <div style="width:62px;height:62px;display:flex;justify-contents:center;"><img style="width: auto; text-align: left;" src="${data.logo}.png" onerror="this.style.display='none'" alt="" referrerpolicy="no-referrer"></div>
             <p class="clubName">${data.name}</p>
         </div>
         <div class="clubType">제${data.group}동아리</div>
