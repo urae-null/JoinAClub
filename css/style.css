@@ -8,6 +8,9 @@
 * {
     --main-color: #9D9D9D;
     --semi-color: hsl(35, 100%, 97%);
+    --red-color: rgb(255 109 109);
+    --yellow-color: rgb(243 199 112);
+    --green-color: rgb(155 200 103);
     font-family: 'GongGothicMedium';
 }
 
