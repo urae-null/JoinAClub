@@ -166,7 +166,7 @@ th, td {
 
 .clubExplainContainer {
     width:clamp(0px,90vw,1080px);
-    height:720px;
+    height:800px;
     overflow-y: hidden;
     overflow-x: auto;
 }
